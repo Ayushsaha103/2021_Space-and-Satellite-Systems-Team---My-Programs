@@ -1,0 +1,39 @@
+
+REALOP FSW Tasks (Dec. 2021)
+Converting MATLAB programs to Python programs
+
+
+Task email:
+	Hey Ayush,
+
+	We need to translate all these from MATLAB (.m) to Python (.py) and the only way to do that is by hand, writing each line in the new language. When you finish, please upload the .py file to the Google Drive folder "Python Drop", located in REALOP / 3. ADCS - Attitude Determination and Control System / Software / Python Drop.
+
+	If you aren't familiar with MATLAB or Python, this is a great time to learn! This should introduce you to a lot in both languages - conditionals, matrix math, indexing, string manipulation, etc. For the Python math, make sure to look over the NumPy library (here), among others that may make things easier for you.
+
+	Bonus points if you can verify that the Python script you write is indeed identical to the MATLAB script, i.e. pass arguments through both and see that they generate the same output.
+
+	Easy
+	CAL2JD.m converts a calendar date (Year, Month, Day, Hour, Minute, Second) to Julian Date (Day.Fractional Day).
+	calc_ECI_to_ECEF.m calculates the rotation matrix between the ECI and ECEF frames, based on the Julian Date.
+
+	Medium
+	TLE_converter.m takes a Two-Line Element set (see more here) and parses it to get the information we need in a format we can easily use. Not all the information in the TLE is used, only ten pieces of information that are used by another algorithm, SGP4.
+	geod_to_ecef.m converts the geodetic coordinates (lat, long) to cartesian coordinates (X,Y,Z) in the ECEF frame. 
+
+	Difficult
+	calc_moon_pos.m and calc_sun_pos.m calculates the moon's and the sun's position in the ECI frame, but relies on a very large look-up table to do so. I'm not sure the best way to get this look-up table (which I have as a .mat file, also attached) accessible via Python. I'm guessing either as a .csv or a .txt, but I'm not familiar with the Python commands that would read either of those. 
+
+	Schrodinger's Difficulty (possibly very easy, possibly impossibly difficult)
+	SGP4.m is the MATLAB implementation of one of the "simplified perturbation models" (see more info here), basically just a fancy orbit propagator that takes into account several external forces (e.g. the ellipsoidal shape of the earth). Ideally, you won't have to write any code at all - I think there should be a Python implementation somewhere out on the web. If you can find it, then verify that it is the same as the MATLAB version, then you're done. If you can't find a reliable version on the internet, then you will need to write a lot of Python math. 
+
+	Good luck! Let me know how it goes and always feel free to reach out to me with questions. Or post on the ADCS FSW or CS team Discord channels. And importantly, THANK YOU for taking this on! This will put the team in a better place when we start testing more FSW in January. If this is all overwhelming, let me know, we can re-assign some of these scripts.
+
+	Best,
+	Adam
+	--
+	Adam Zufall
+	B.S. Aerospace and Mechanical Engineering, UC Davis 2017
+	M.S. Aerospace Engineering and Astronautics, Stanford University 2019
+	PhD Student, HRVIP Laboratory, UC Davis
+	(530) 440-5426
+
