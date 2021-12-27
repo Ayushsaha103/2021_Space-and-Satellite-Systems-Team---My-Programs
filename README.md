@@ -1,1 +1,1 @@
-# Space-and-Satellite-Systems-Organization---My-Programs
+# Space-and-Satellite-Systems-Team---My-Programs
