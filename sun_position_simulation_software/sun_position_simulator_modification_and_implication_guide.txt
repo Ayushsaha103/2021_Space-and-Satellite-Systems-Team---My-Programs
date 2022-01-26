@@ -1,0 +1,41 @@
+
+#************************************************************************************************************
+GUIDE to modifying and integrating sun_position_simulator.py
+#************************************************************************************************************
+
+# TO USE THE PROGRAM'S LOW-PASS FILTER ALGORITHM FOR REAL-TIME SUN POSITION VECTORS
+# To instead use actual real-time calculated sun position vector values and integrate this program's low
+# pass filter for them, just plug in those real-time vectors into the vector function (line 145), and
+# run the program. You may have to set max_degree_change_value (line 82) higher (broaden the low pass filter)
+# to avoid crashing
+
+#***************************************************************
+
+# IF YOU CHOOSE TO MODIFY SUN POSITION FUNCTION AND STILL KEEP IT WITH RESPECT TO t (which means
+# you are not using the real-time calculated sun position vectors, but rather a new simulation):
+# You may modify it at line 145
+	# NOTE: If you want to modify this, you have to make it include both positive and neg. z values
+    # You also must be careful and test any changes. you may have to broaden low pass filter (by increasing
+	# max_degree_change_value, line 82)
+
+#***************************************************************
+
+# TO STOP ENTIRE SIMULATED OUTLIER THROW-IN & DETECTION FUNCTIONALITY
+# To stop the program from purposefully throwing in and detecting outliers, comment out the entire
+# 'if' statement at line 150 ("if randrange(0, 5) == 1"), AND set max_degree_change_value at line 82
+# really high, i.e. something like 999
+
+#***************************************************************
+
+# MODIFIABLE VARIABLES TO KEEP IN MIND
+# Rate of outlier throw-in is modifiable -> in line 150 (if randrange(0, 5) == 1), modify values in randrange()
+# Deceleration and acceleration rates are included and modifiable (via 'decc_const_pos' and 'decc_const_neg')
+# Duration interval of constant velocity (before deceleration begins) is modifiable (via 't_upper_bound'
+	# and 't_lower_bound')
+# Angular momentum constant is included and modifiable (via 'val')
+# Speed of program running is modifiable (via 'time_change_rate')
+
+# The way the program simulation is currently made, the usual sun position deg. change per time interval (0.1 sec)
+# is about 0.4-4 degs
+
+
