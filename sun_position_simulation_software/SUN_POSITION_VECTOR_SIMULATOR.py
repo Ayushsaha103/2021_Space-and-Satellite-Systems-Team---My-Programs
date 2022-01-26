@@ -4,8 +4,8 @@
 # Outliers are thrown in and detected by algorithm, accuracy > 95%
 # Program-crash-detection-and-response algorithm equipped
 
-# The entire if loop at line 165 ("if randrange(0, 5) == 1") can be commented out to stop the program
-# from purposefully throwing in and detecting outliers
+# To stop the program from purposefully throwing in and detecting outliers, comment out the entire
+# 'if' statement at line 165 ("if randrange(0, 5) == 1"), AND set max_degree_value at line 97 really high
 
 # Sun position vector function is modifiable (w/ respect to t)
     # NOTE: If you want to modify this, you have to make it include both positive and neg. z values
